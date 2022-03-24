@@ -69,6 +69,18 @@ function App() {
         </ul>
         <div className="errors">Errors: 0 / 3</div>
       </div>
+      <div className='container'>
+        <h1 className='page-name'>Sudoku</h1>
+        <button className='btn'>Start Game</button>
+      </div>
+      <div className='container'>
+        <h1 className='page-name'>Game Over!</h1>
+        <button className='btn'>Play Again</button>
+      </div>
+      <div className='container'>
+        <h1 className='page-name'>You Won!</h1>
+        <button className='btn'>Play again</button>
+      </div>
     </div>
 
   );
