@@ -85,10 +85,23 @@ ul{
 
 
 .page-name{
+  font-size: 70px;
   font-style: italic;
+  color: orange;
 }
 .btn{
+  width: 170px;
+  height: 40px;
+  font-size: 25px;
   color: orange;
   background-color: aqua;
-  border-color: orange;
+  border: 5px solid orange;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+}
+.btn:hover{
+  color: rgba(255, 166, 0, 0.692);
+  background-color: rgba(0, 226, 226, 0.603);
+  border-color: rgba(255, 166, 0, 0.692);
 }
