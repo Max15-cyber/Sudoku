@@ -1,88 +1,21 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.scss';
+import Game from './components/game/Game';
+import GameOver from './components/gameOver/GameOver';
+import Menu from './components/menu/Menu';
+import Win from './components/win/Win';
 
 function App() {
-  let title = "Sudoku";
   // 
   return (
     <div className="App">
-      <div className='container'>
-        <h1>{title}</h1>
-        <table className="table">
-          <tbody>
-            <tr className="tr">
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-          </tbody>
-        </table>
-        <ul className="numbers">
-          <li className="number">1</li>
-          <li className="number">2</li>
-          <li className="number">3</li>
-          <li className="number">4</li>
-          <li className="number">5</li>
-          <li className="number">6</li>
-        </ul>
-        <div className="errors">Errors: 0 / 3</div>
-      </div>
-      <div className='container'>
-        <h1 className='page-name'>Sudoku</h1>
-        <button className='btn'>Start Game</button>
-      </div>
-      <div className='container'>
-        <h1 className='page-name'>Game Over!</h1>
-        <button className='btn'>Play Again</button>
-      </div>
-      <div className='container'>
-        <h1 className='page-name'>You Won!</h1>
-        <button className='btn'>Play again</button>
-      </div>
+        <Routes>
+            <Route path='/' element={<Menu />}/>
+            <Route path='/game' element={<Game />}/>
+            <Route path='/win' element={<Win />}/>
+            <Route path='/game_over' element={<GameOver />}/>
+        </Routes>
     </div>
-
   );
 }
 
