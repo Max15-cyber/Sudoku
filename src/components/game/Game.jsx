@@ -29,7 +29,7 @@ const Game = () => {
             <table className="table">
                 <tbody>{tbody}</tbody>
             </table>
-            <ul className="numbers"></ul>
+            <ul className="numbers">{values}</ul>
             <div className="errors">Errors: {errors} / 3</div>
         </div>
     )
