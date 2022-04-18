@@ -41,15 +41,18 @@ ul{
   tr:nth-of-type(even){
     border-bottom: $borderSector;
   }
-  td {
+  .td {
     width: 50px;
     height: 50px;
     border: 3px solid blue;
     text-align: center;
     background-color: aqua;
   }
-  td:nth-of-type(3){
+  .td:nth-of-type(3){
     border-right: $borderSector;
+  }
+  .active-ceil{
+    background-color: rgba(1, 194, 194, 0.897)
   }
 }
 
@@ -105,3 +108,5 @@ ul{
   background-color: rgba(0, 226, 226, 0.603);
   border-color: rgba(255, 166, 0, 0.692);
 }
+
+

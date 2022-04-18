@@ -1,26 +1,27 @@
-const Game = () => {
-    let data = [
-        [1, 2, 3, 4, 5, 6],
-        [1, 2, 0, 4, 5, 6],
-        [1, 2, 3, 4, 5, 0],
-        [0, 2, 3, 4, 5, 6],
-        [1, 2, 3, 4, 5, 6],
-        [1, 2, 3, 4, 0, 6]
-    ]
-    let numbers = [1, 2, 3, 4, 5, 6];
-    let errors = 0;
-    const tbody = data.map((tr, trIndex) => {
+import { useState } from "react";
+
+const Game = (props) => {
+    const setValue = (e) => {
+        // const action = 
+        props.dispatch({type: 'set value'})
+    };
+    const [indexArr, newIndexArr] = useState([0, 0]);
+    const setActiveInput = (a, b) => {
+        newIndexArr([a, b]);
+    }
+    const tbody = props.matrix.map((tr, trIndex) => {
         return (
             <tr key={trIndex}>{tr.map((td, tdIndex) => {
                 return (
-                    <td key={tdIndex}>{td || ''}</td>
+                    <td key={tdIndex} onClick = {() => setActiveInput(trIndex, tdIndex)}
+                    className={(trIndex === indexArr[0] && tdIndex === indexArr[1]) ? 'td active-ceil' : 'td'}>{td || ''}</td>
                 )
             })}</tr>
         )
     });
-    const values = numbers.map((number) => {
-        return(
-            <li className="number">{number}</li>
+    const values = props.values.map((number) => {
+        return (
+            <li className="number" key={number} onClick={setValue}>{number}</li>
         )
     })
     return (
@@ -30,7 +31,7 @@ const Game = () => {
                 <tbody>{tbody}</tbody>
             </table>
             <ul className="numbers">{values}</ul>
-            <div className="errors">Errors: {errors} / 3</div>
+            <div className="errors">Errors: {props.errors} / 3</div>
         </div>
     )
 }

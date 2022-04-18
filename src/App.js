@@ -5,13 +5,13 @@ import GameOver from './components/gameOver/GameOver';
 import Menu from './components/menu/Menu';
 import Win from './components/win/Win';
 
-function App() {
+function App(props) {
   // 
   return (
     <div className="App">
         <Routes>
             <Route path='/' element={<Menu />}/>
-            <Route path='/game' element={<Game />}/>
+            <Route path='/game' element={<Game matrix={props.matrix} values={props.values} errors={props.errors} dispatch={props.dispatch}/>}/>
             <Route path='/win' element={<Win />}/>
             <Route path='/game_over' element={<GameOver />}/>
         </Routes>
