@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { setValueActionCreater, startGame } from "../../store/reducer";
 
 const Game = (props) => {
+    const isOver = () => {
+        
+    }
+    useEffect(() => {
+        window.onpopstate = () => props.dispatch(startGame())
+    }, [])
     const setValue = (e) => {
-        const action = {
-            type: 'set value',
-            value: e.target.textContent,
-            indexArr: indexArr,
-        }
+        const action = setValueActionCreater(e.target.textContent, indexArr)
         props.dispatch(action);
 
     };
