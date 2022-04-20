@@ -2,8 +2,13 @@ import { useState } from "react";
 
 const Game = (props) => {
     const setValue = (e) => {
-        // const action = 
-        props.dispatch({type: 'set value'})
+        const action = {
+            type: 'set value',
+            value: e.target.textContent,
+            indexArr: indexArr,
+        }
+        props.dispatch(action);
+
     };
     const [indexArr, newIndexArr] = useState([0, 0]);
     const setActiveInput = (a, b) => {

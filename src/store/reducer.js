@@ -1,4 +1,4 @@
-export const startGame = () => ({type: 'startGame'})
+export const startGame = () => ({ type: 'startGame' })
 const data = {
     selectMatrix() {
         return Math.floor(Math.random() * this.dataMatrix.length);
@@ -71,9 +71,9 @@ const getInitialState = (data) => {
         errors: 0,
     }
 }
-const reducer = (state = getInitialState(data), action = startGame()) =>{
-     switch(action.type){
-        case 'set value': 
+const reducer = (state = getInitialState(data), action = startGame()) => {
+    switch (action.type) {
+        case 'set value':
             let newState = {
                 ...state,
                 matrix: {
@@ -84,10 +84,12 @@ const reducer = (state = getInitialState(data), action = startGame()) =>{
                 }
             }
             let value = +action.value;
-            if(state.matrix.end[action.indexArr[0]][action.indexArr[1]] === value){
+            if (state.matrix.end[action.indexArr[0]][action.indexArr[1]] === value) {
                 newState.matrix.start[action.indexArr[0]][action.indexArr[1]] = value;
+            } else{
+                newState.errors++;
             }
-            return newState; 
+            return newState;
         case 'startGame':
             return state;
     }
