@@ -80,7 +80,7 @@ const getInitialState = (data) => {
         errors: 0,
     }
 }
-const reducer = (state = getInitialState(data), action = startGame()) => {
+const reducer = (state = getInitialState(data), action) => {
     switch (action.type) {
         case SET_VALUE:
             let newState = {
