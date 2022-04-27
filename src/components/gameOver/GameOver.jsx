@@ -1,8 +1,10 @@
+import { NavLink } from "react-router-dom";
+
 const GameOver = () => {
     return (
         <div className='container'>
         <h1 className='page-name'>Game Over!</h1>
-        <button className='btn'>Play Again</button>
+        <NavLink className='btn' to='/game'>Play Again</NavLink>
       </div>
     )
 }

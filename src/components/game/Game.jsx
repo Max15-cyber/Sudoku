@@ -1,13 +1,29 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { setValueActionCreater, startGame } from "../../store/reducer";
 
 const Game = (props) => {
-    const isOver = () => {
-        
+    let navigate = useNavigate()
+    const isOver = (props) => {
+        if(props.errors >= 3){
+            props.dispatch(startGame());
+            navigate('/game_over');
+        }
+    }
+    const isWin = (props) => {
+        for (const arr of props.matrix) {
+            if(arr.includes(0)) {
+                return;
+            }
+        }
+        props.dispatch(startGame());
+        navigate('/win');
     }
     useEffect(() => {
         window.onpopstate = () => props.dispatch(startGame())
-    }, [])
+        isOver(props);
+        isWin(props);
+    }, [props.errors, props.matrix]);
     const setValue = (e) => {
         const action = setValueActionCreater(e.target.textContent, indexArr)
         props.dispatch(action);
