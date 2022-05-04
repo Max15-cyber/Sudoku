@@ -83,6 +83,9 @@ const getInitialState = (data) => {
 const reducer = (state = getInitialState(data), action = startGame()) => {
     switch (action.type) {
         case SET_VALUE:
+            if(state.matrix.start[action.indexArr[0]][action.indexArr[1]] != 0){
+                return;
+            }
             let newState = {
                 ...state,
                 matrix: {
