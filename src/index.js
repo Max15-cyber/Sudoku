@@ -21,5 +21,5 @@ reportWebVitals();
 /* Создаем новое приложение react */
 /* nodeCommandPrompt
 npx create-react-app (название без camelcase)
-yarn add react-router-dom redux react-redux node-sass@6.0
+ 
 */
