@@ -25,7 +25,6 @@ const Game = (props) => {
     }, [props.errors, props.matrix]);
     const setValue = (e) => {
         props.setValue(e.target.textContent, indexArr)
-
     };
     const [indexArr, newIndexArr] = useState([0, 0]);
     const setActiveInput = (a, b) => {
